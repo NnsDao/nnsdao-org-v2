@@ -12,7 +12,6 @@
   "dependencies": {
     "@alpinejs/collapse": "3.13.0",
     "@astrojs/tailwind": "5.0.0",
-    "@astrojs/vercel": "^5.0.0",
     "@fontsource/inter": "5.0.8",
     "@types/alpinejs": "3.13.0",
     "alpinejs": "3.13.0",
