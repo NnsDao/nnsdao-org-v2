@@ -1,7 +1,6 @@
 ---
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-500.css';
-import { Fragment } from 'astro/dist/runtime/server';
 import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/layout/Footer.astro';
 import Header from '../components/layout/Header.astro';
@@ -57,15 +56,15 @@ const { description, title } = Astro.props;
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
               return true;
             }
-            return false;
+            return true;
           })();
         },
 
-        isDark: false,
+        isDark: true,
 
         toggle() {
           this.isDark = !this.isDark;
-          localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
+          localStorage.setItem('theme', this.isDark ? 'light' : ' dark');
         },
       });
 
