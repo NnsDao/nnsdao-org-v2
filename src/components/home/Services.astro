@@ -1,0 +1,47 @@
+---
+import { Fragment } from 'astro/dist/runtime/server';
+
+const services = [
+  {
+    step: 'Step 01',
+    name: 'Discover & Invite',
+    description:
+      'In the Nnsdao ecosystem, find your favorite DAO or create a new one and invite your friends to join.',
+  },
+  {
+    step: 'Step 02',
+    name: 'Product & Buidl',
+    description:
+      'Create a product, set goals, refine and find market fit, and get more users to experience and join the DAO.',
+  },
+  {
+    step: 'Step 03',
+    name: 'DAOs & Earn',
+    description:
+      'Share the proceeds with the community, return governance to the community, and implement progressive decentralization to make the DAO bottom-up and profitable for all.',
+  },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-12 sm:gap-16">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Services Flow</h2>
+      <div class="grid gap-8 lg:grid-cols-3">
+        {
+          services.map((service) => (
+            <div class="flex flex-col gap-12 rounded-3xl bg-primary-500/10 px-6 py-8 dark:bg-primary-400/10">
+              <p class="text-sm">{service.step}</p>
+              <div class="flex flex-col gap-4">
+                <h3 class="text-xl font-medium">{service.name}</h3>
+                <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,172 @@
+---
+import { Fragment } from 'astro/dist/runtime/server';
+
+const bottomLinks = [
+  {
+    header: 'GETTING STARTED',
+    links: [
+      {
+        name: 'Docs',
+        href: 'https://docs.nnsdao.org/',
+        isExternal: false,
+      },
+      {
+        name: 'White Paper V1',
+        href: 'https://github.com/NnsDao/nnsdao-org/blob/main/static/NnsDAO_Boundaryless_Autonomous_Organization.pdf',
+        isExternal: false,
+      },
+      {
+        name: 'White Paper Japanese V1',
+        href: 'https://syunduel.medium.com/nnsdao-whitepaper-japanese-translation-922c47e3840b',
+        isExternal: false,
+      },
+      {
+        name: 'DAOs To DAOs Comics',
+        href: 'https://github.com/NnsDao/nnsdao-org/tree/main/static/comics/English',
+        isExternal: false,
+      },
+      {
+        name: 'Github',
+        href: 'https://github.com/nnsdao',
+        isExternal: true,
+      },
+    ],
+  },
+
+  {
+    header: 'ECOSYSTEM',
+    links: [
+      {
+        name: 'Nomos Platform',
+        href: 'https://h637e-ziaaa-aaaaj-aaeaa-cai.raw.ic0.app/',
+        isExternal: false,
+      },
+      {
+        name: 'ICmarket',
+        href: 'https://ltdzc-siaaa-aaaag-qab5q-cai.raw.ic0.app/',
+        isExternal: false,
+      },
+      {
+        name: 'Looncast',
+        href: 'https://looncast.com/',
+        isExternal: false,
+      },
+      {
+        name: 'Icpscan',
+        href: 'https://sznps-4aaaa-aaaah-qab2a-cai.ic0.app/',
+        isExternal: false,
+      },
+      {
+        name: " Texas Hold'em ",
+        href: 'https://lm5fh-ayaaa-aaaah-aafua-cai.ic0.app/',
+        isExternal: false,
+      },
+    ],
+  },
+  {
+    header: 'LEARN',
+    links: [
+      {
+        name: 'Buy NDP via ICPswap',
+        href: 'https://app.icpswap.com/swap',
+        isExternal: false,
+      },
+      {
+        name: 'Buy NDP via Sonic',
+        href: 'https://app.sonic.ooo/swap',
+        isExternal: false,
+      },
+      {
+        name: 'Coingecko',
+        href: 'https://www.coingecko.com/en/coins/nnsdao-protocol',
+        isExternal: false,
+      },
+      {
+        name: 'Coincarp',
+        href: 'https://www.coincarp.com/currencies/nnsdao-protocol/',
+        isExternal: false,
+      },
+      {
+        name: 'CoinMarketCap',
+        href: 'https://coinmarketcap.com/currencies/nnsdao-protocol/',
+        isExternal: false,
+      },
+      {
+        name: 'Twitter',
+        href: 'https://twitter.com/nnsdaos',
+        isExternal: true,
+      },
+      {
+        name: 'Openchat',
+        href: 'https://oc.app/community/nayn5-paaaa-aaaar-ascva-cai/',
+        isExternal: true,
+      },
+      {
+        name: 'Medium',
+        href: 'https://nnsdao.medium.com/',
+        isExternal: true,
+      },
+    ],
+  },
+];
+---
+
+<footer
+  class="mt-16 bg-primary-500/10 py-16 dark:bg-primary-400/10 lg:mt-20 lg:py-20"
+  aria-labelledby="footer-heading"
+>
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col justify-between gap-12 sm:gap-16 lg:flex-row">
+      <div class="flex max-w-sm flex-col items-start gap-6 sm:gap-8">
+        <img
+          class="h-8 w-auto"
+          width="65"
+          height="40"
+          :src="$store.theme.isDark ? '/assets/ec-logo.png' : '/assets/nnsdao-200.png'"
+          alt="Nnsdao"
+        />
+        <p class="text-base text-primary-950/70 dark:text-primary-200/70">
+          Nnsdao is a boundaryless autonomous organization.
+        </p>
+        <p class="text-sm text-primary-950/70 dark:text-primary-200/70">© 2023 Nnsdao</p>
+      </div>
+
+      <!-- Bottom links -->
+      <div class="grid max-w-xl flex-1 grid-cols-1 gap-8 sm:grid-cols-3">
+        {
+          bottomLinks.map((group) => (
+            <div class="flex flex-col gap-4">
+              <p class="text-base font-medium">{group.header}</p>
+              <ul role="list" class="flex flex-col gap-3">
+                {group.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-950 dark:focus-visible:outline-primary-200"
+                      target={link.isExternal ? '_blank' : undefined}
+                      rel={link.isExternal ? 'noopener' : undefined}
+                    >
+                      {link.name}
+                      {link.isExternal && (
+                        <svg
+                          class="h-4 w-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z" />
+                        </svg>
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</footer>

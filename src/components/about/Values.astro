@@ -1,0 +1,60 @@
+---
+import { Fragment } from 'astro/dist/runtime/server';
+
+const values = [
+  [
+    {
+      ref: '01',
+      name: 'DAOs to DAOs',
+      description:
+        'We believe that the future of company transparency, independent developer collaboration, and even ideas to change traditional company structures all start with DAOs. that is why our mission is to make joining a DAO as easy and reliable as working with ants. When you own your own project, you can make a global impact in many ways. Help us drive the DAO revolution.',
+    },
+    {
+      ref: '02',
+      name: 'Ownership',
+      description:
+        'Nnsdao belongs to all of us. We do the right thing, even when it is harder in the short run. We challenge the status quo by reasoning from first principles and show up with integrity in everything we do.',
+    },
+  ],
+  [
+    {
+      ref: '03',
+      name: '1 DAOs, 1 Dream',
+      description:
+        'Nnsdao is a community of users, developers, designers, and other professionals who can collaborate and share their pain and success with each other. We seek out, gather, and trust a diverse group of independent developers with different perspectives to guide Nnsdao is progress. We go above and beyond for each other.',
+    },
+    {
+      ref: '04',
+      name: 'Catalytic Characters',
+      description:
+        'In a decentralized organization, a catalyst creates a circle and then withdraws into the background. A Catalyst makes a decentralized organization work and then gives control back to the members. However, even when the Catalyst is gone, the influence of the Catalyst is still felt at times by the people in the circle. A catalyst is a person who inspires people to take action.',
+    },
+  ],
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-8 lg:gap-12">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Our Values</h2>
+      <div class="grid gap-8 lg:grid-cols-2">
+        {
+          values.map((column, index) => (
+            <div class:list={['space-y-8', index === 1 && 'lg:mt-16']}>
+              {column.map((value) => (
+                <div class="flex flex-col gap-12 rounded-3xl bg-primary-500/10 px-6 py-8 dark:bg-primary-400/10">
+                  <div class="flex flex-col gap-4">
+                    <h3 class="text-xl font-medium">{value.name}</h3>
+                    <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
+                      {value.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

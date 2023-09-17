@@ -1,0 +1,74 @@
+---
+import { Fragment } from 'astro/dist/runtime/server';
+
+const stats = [
+  {
+    name: 'Years',
+    value: '2',
+  },
+  {
+    name: 'Experts',
+    value: '6',
+  },
+  {
+    name: 'Projects',
+    value: '7',
+  },
+  {
+    name: 'Grant',
+    value: '6',
+  },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="grid gap-16 lg:grid-cols-2 lg:gap-24">
+      <img
+        class="mx-auto h-auto w-full max-w-xl rounded-3xl"
+        width="576"
+        height="864"
+        src="/assets/starfish.png"
+        alt="Our experts working together"
+      />
+      <div class="flex flex-col gap-10">
+        <!-- Mission description -->
+        <div class="space-y-8 sm:space-y-12">
+          <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Our mission</h2>
+          <div class="space-y-6">
+            <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
+              The Nnsdao protocol is an open source, decentralized, borderless, autonomous
+              organization built on the Internet Computer Protocol (ICP) ecology. Nnsdao starts from
+              a people-oriented principle to realize a virtual passport system based on IC, allowing
+              every user involved in the DAO ecology to participate in projects within the IC
+              ecology without threshold, and to realize a new form of organization to DAO, DAO can
+              link organizations, companies, communities, finance, art, games and other ecologies
+              through Nnsdao's virtual identity, and build a world belonging to DAOn with the
+              transparency of blockchain and virtual user credit system.
+            </p>
+
+            <p class="text-base text-primary-950/70 dark:text-primary-200/70 sm:text-lg">
+              Nnsdao's goal is ICP to achieve the interconnection of everything, container
+              interconnection, application interconnection, in the era of WEB3.0, everyone can have
+              their own data sovereignty, everyone can achieve autonomy for their favorite DAOs,
+              everything is like Network Nervous System with rules to run and orderly governance,
+              and NNSDAO is not just a DAO, it is more like a glue, how do you feel? Just DAOs it.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <dl class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {
+            stats.map((stat) => (
+              <div class="rounded-3xl border border-primary-900/10 p-6 dark:border-primary-300/10">
+                <dt class="text-base">{stat.name}</dt>
+                <dd class="text-3xl font-medium tracking-tight">{stat.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
